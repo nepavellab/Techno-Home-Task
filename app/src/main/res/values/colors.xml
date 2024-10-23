@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="matteRed">#FFEF5350</color>
+    <color name="matteBlue">#FF42A5F5</color>
+    <color name="lightPurple">#FFEA80FC</color>
+    <color name="background_color">#FF191717</color>
+    <color name="creamWhite">#FFE6DEDE</color>
+</resources>

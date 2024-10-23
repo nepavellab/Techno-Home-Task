@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_margin="1dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivWallpaper"
+        android:layout_width="0dp"
+        android:textAlignment="center"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/creamWhite"
+        app:layout_constraintBottom_toBottomOf="@id/ivWallpaper"
+        app:layout_constraintLeft_toLeftOf="@+id/ivWallpaper"
+        app:layout_constraintRight_toRightOf="@id/ivWallpaper"
+        app:layout_constraintTop_toTopOf="@id/ivWallpaper"
+        tools:text="1"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
