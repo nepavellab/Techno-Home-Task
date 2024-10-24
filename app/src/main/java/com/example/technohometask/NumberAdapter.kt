@@ -1,25 +1,29 @@
 package com.example.technohometask
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 class NumberAdapter : RecyclerView.Adapter<NumberViewHolder>() {
     private val numbers = mutableListOf<Int>()
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun setItems(nums: List<Int>?) =
-        nums?.let {
+    fun setItems(newNumbers: List<Int>?) =
+        newNumbers?.let {
+            val calculatedDiff = DiffUtil.calculateDiff(
+                NumberDiffUtilCallback(numbers, newNumbers)
+            )
             numbers.clear()
             numbers.addAll(it)
-            notifyDataSetChanged()
+            calculatedDiff.dispatchUpdatesTo(this)
         }
 
-    @SuppressLint("NotifyDataSetChanged")
     fun addItem(number: Int) {
+        val calculatedDiff = DiffUtil.calculateDiff(
+            NumberDiffUtilCallback(numbers, numbers + number)
+        )
         numbers.add(number)
-        notifyDataSetChanged()
+        calculatedDiff.dispatchUpdatesTo(this)
     }
 
     fun getItems() = numbers.toIntArray()
