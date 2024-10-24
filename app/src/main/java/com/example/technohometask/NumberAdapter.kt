@@ -30,7 +30,7 @@ class NumberAdapter : RecyclerView.Adapter<NumberViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumberViewHolder {
         return NumberViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
+            ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
