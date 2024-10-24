@@ -1,12 +1,12 @@
 package com.example.technohometask
 
 import android.annotation.SuppressLint
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.technohometask.databinding.ItemBinding
 
-class NumberViewHolder(item: View) : RecyclerView.ViewHolder(item) {
-    private val binding = ItemBinding.bind(item)
+class NumberViewHolder(
+    private val binding: ItemBinding
+) : RecyclerView.ViewHolder(binding.root) {
 
     @SuppressLint("ResourceAsColor")
     fun bind(number: Int) {
