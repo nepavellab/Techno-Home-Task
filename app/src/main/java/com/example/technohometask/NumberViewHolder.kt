@@ -13,11 +13,7 @@ class NumberViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         binding.apply {
             tvNumber.text = "$number"
             ivWallpaper.setBackgroundResource(
-                if (number % 2 == 0) {
-                    R.color.matteRed
-                } else {
-                    R.color.matteBlue
-                }
+                if (number % 2 == 0) R.color.matteRed else R.color.matteBlue
             )
         }
     }
