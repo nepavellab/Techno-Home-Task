@@ -8,6 +8,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: NumberAdapter
     private val key = "NUMBERS"
+    private val initListSize = 50
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
             if (savedInstanceState != null) {
                 setItems(savedInstanceState.getIntArray(key)?.toList())
             } else {
-                setItems(List(50){ it + 1})
+                setItems(List(initListSize){ it + 1})
             }
         }
 
