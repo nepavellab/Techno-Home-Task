@@ -7,8 +7,10 @@ import com.example.technohometask.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: NumberAdapter
-    private val key = "NUMBERS"
-    private val initListSize = 50
+    companion object {
+        private const val KEY = "NUMBERS"
+        private const val INIT_LIST_SIZE = 50
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,9 +19,9 @@ class MainActivity : AppCompatActivity() {
 
         adapter = NumberAdapter().apply {
             if (savedInstanceState != null) {
-                setItems(savedInstanceState.getIntArray(key)?.toList())
+                setItems(savedInstanceState.getIntArray(KEY)?.toList())
             } else {
-                setItems(List(initListSize){ it + 1})
+                setItems(List(INIT_LIST_SIZE){ it + 1})
             }
         }
 
@@ -33,6 +35,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putIntArray(key, adapter.getItems())
+        outState.putIntArray(KEY, adapter.getItems())
     }
 }
