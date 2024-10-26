@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
             if (savedInstanceState != null) {
                 setItems(savedInstanceState.getIntArray(KEY)?.toList())
             } else {
-                setItems(List(INIT_LIST_SIZE){ it + 1})
+                setItems(List(INIT_LIST_SIZE){ it + 1 })
             }
         }
 
